@@ -1,0 +1,77 @@
+/* ---------- Base (mobile) ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.grid {
+  display: block;                
+}
+
+.section {
+  height: 100vh;
+}
+
+.grid.skills {
+  display: grid;
+  grid-template-areas:
+    "heading"
+    "content1"
+    "content2";
+  gap: 2rem;
+}
+
+.project {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;            
+  grid-template-areas:
+    "one"
+    "two"
+    "three";
+}
+
+/* ---------- Breakpoints ---------- */
+/* Stack changes -> 2-col layout at 640 px up */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid.skills {
+    grid-template-areas:
+      "heading  heading"
+      "content1 content2";
+  }
+}
+
+@media (min-width: 1024px) {
+  .project {
+    grid-template-columns: repeat(3, 1fr);  
+    grid-template-areas: "one two three";
+  }
+}
+a { list-style: none; }          
+a::marker { content: none; }      
+
+summary::-webkit-details-marker,
+summary::marker {                 
+  display: none;                  
+}
+.hash{
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;           
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+}
+@media(min-width:1024px) {
+  .hash{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "one two four"
+                         "three three four";
+  }
+}
